@@ -1,0 +1,27 @@
+cluster_addr  = "https://${CLUSTER_ADDRESS}:8201"
+api_addr      = "https://${API_ADDRESS}:8200"
+
+ui = true
+
+listener "tcp" {
+  address            = "[::]:8200"
+  cluster_address    = "[::]:8201"
+  tls_cert_file      = "${TLS_PATH}/vault-cert.pem"
+  tls_key_file       = "${TLS_PATH}/vault-key.pem"
+  tls_client_ca_file = "${TLS_PATH}/vault-ca.pem"
+  tls_min_version    = "tls13"
+}
+
+storage "raft" {
+  path = "${STORAGE_PATH}"
+  node_id = "${NODE_ID}"
+
+%{ for node in VAULT_NODES ~}
+  rety_join = {
+    leader_api_addr         = "https://${node}:8200"
+    leader_ca_cert_file     = "${TLS_PATH}/vault-ca.pem"
+    leader_client_cert_file = "${TLS_PATH}/tls/vault-cert.pem"
+    leader_client_key_file  = "${TLS_PATH}/tls/vault-key.pem"
+  }
+%{ endfor ~}
+}
