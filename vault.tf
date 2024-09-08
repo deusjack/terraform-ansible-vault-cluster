@@ -44,4 +44,5 @@ module "vault" {
   cap_drop = [
     "ALL"
   ]
+  external_triggers = merge(module.certificates.triggers, module.vault.triggers)
 }

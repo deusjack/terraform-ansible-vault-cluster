@@ -69,11 +69,13 @@ resource "tls_locally_signed_cert" "vault_server" {
 #########################
 
 module "vault_tls_dir" {
-  for_each = var.vault_nodes
-  source   = "git@github.com:deusjack/module-directory.git?ref=1.0.0"
-  hostname = each.value
-  path     = var.tls_dir
-  mode     = "0770"
+  for_each    = var.vault_nodes
+  source      = "git@github.com:deusjack/module-directory.git?ref=1.0.0"
+  hostname    = each.value
+  path        = var.tls_dir
+  mode        = "0755"
+  owner       = "root"
+  group_owner = var.hashicorp_users.primary_groups[each.value]
   secontext = {
     type = "container_file_t"
   }
