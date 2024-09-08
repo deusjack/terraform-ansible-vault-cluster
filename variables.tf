@@ -3,7 +3,6 @@ variable "domain" {
   description = "The domain for your Hashicorp stack"
 }
 
-
 variable "hashicorp_users" {
   type = object({
     triggers       = map(string)

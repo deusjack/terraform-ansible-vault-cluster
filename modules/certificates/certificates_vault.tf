@@ -85,7 +85,7 @@ module "vault_ca_files" {
   source      = "git@github.com:deusjack/module-file.git?ref=1.0.0"
   hostname    = each.value
   content     = tls_self_signed_cert.ca.cert_pem
-  path        = "${module.vault_tls_dir.path}/vault-ca.pem"
+  path        = "${module.vault_tls_dir[each.key].path}/vault-ca.pem"
   mode        = "0640"
   owner       = "root"
   group_owner = var.hashicorp_users.primary_groups[each.value]
@@ -100,7 +100,7 @@ module "vault_cert_files" {
   source      = "git@github.com:deusjack/module-file.git?ref=1.0.0"
   hostname    = each.value
   content     = tls_locally_signed_cert.vault_server[each.key].cert_pem
-  path        = "${module.vault_tls_dir.path}/vault-cert.pem"
+  path        = "${module.vault_tls_dir[each.key].path}/vault-cert.pem"
   mode        = "0640"
   owner       = "root"
   group_owner = var.hashicorp_users.primary_groups[each.value]
@@ -115,7 +115,7 @@ module "vault_key_files" {
   source      = "git@github.com:deusjack/module-file.git?ref=1.0.0"
   hostname    = each.value
   content     = tls_private_key.vault_server[each.key].private_key_pem
-  path        = "${module.vault_tls_dir.path}/vault-key.pem"
+  path        = "${module.vault_tls_dir[each.key].path}/vault-key.pem"
   mode        = "0640"
   owner       = "root"
   group_owner = var.hashicorp_users.primary_groups[each.value]
