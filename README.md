@@ -52,5 +52,6 @@ No resources.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_directories"></a> [directories](#output\_directories) | n/a |
 | <a name="output_triggers"></a> [triggers](#output\_triggers) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
