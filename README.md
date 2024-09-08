@@ -33,7 +33,7 @@ No providers.
 |------|--------|---------|
 | <a name="module_certificates"></a> [certificates](#module\_certificates) | ./modules/certificates | n/a |
 | <a name="module_config"></a> [config](#module\_config) | ./modules/config | n/a |
-| <a name="module_vault"></a> [vault](#module\_vault) | git@github.com:deusjack/module-podman-container.git | n/a |
+| <a name="module_vault"></a> [vault](#module\_vault) | git@github.com:deusjack/module-podman-container.git | 1.0.0 |
 
 ## Resources
 
