@@ -7,3 +7,7 @@ output "triggers" {
 output "directories" {
   value = module.config.directories
 }
+
+output "container_name" {
+  value = module.vault.name
+}
