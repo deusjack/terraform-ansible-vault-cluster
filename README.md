@@ -52,6 +52,7 @@ No resources.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_cert_files_path"></a> [cert\_files\_path](#output\_cert\_files\_path) | n/a |
 | <a name="output_container_name"></a> [container\_name](#output\_container\_name) | n/a |
 | <a name="output_directories"></a> [directories](#output\_directories) | n/a |
 | <a name="output_triggers"></a> [triggers](#output\_triggers) | n/a |

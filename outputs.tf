@@ -11,3 +11,7 @@ output "directories" {
 output "container_name" {
   value = { for k, v in module.vault : k => v.name }
 }
+
+output "cert_files_path" {
+  value = module.certificates.files
+}
