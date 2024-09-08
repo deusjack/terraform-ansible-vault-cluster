@@ -9,5 +9,5 @@ output "directories" {
 }
 
 output "container_name" {
-  value = module.vault.name
+  value = { for k, v in module.vault : k => v.name }
 }
