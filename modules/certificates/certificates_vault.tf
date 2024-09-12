@@ -101,7 +101,7 @@ module "vault_cert_files" {
   for_each    = var.vault_nodes
   source      = "git@github.com:deusjack/module-file.git?ref=1.0.0"
   hostname    = each.value
-  content     = tls_locally_signed_cert.vault_server[each.key].cert_pem
+  content     = join("\n", [tls_locally_signed_cert.vault_server[each.key].cert_pem, tls_self_signed_cert.ca.cert_pem])
   path        = "${module.vault_tls_dir[each.key].path}/vault-cert.pem"
   mode        = "0640"
   owner       = "root"
