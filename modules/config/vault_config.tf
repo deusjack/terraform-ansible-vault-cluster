@@ -48,7 +48,6 @@ module "vault_config" {
     TLS_PATH        = local.vault_tls_dir
     STORAGE_PATH    = local.vault_data_dir
     NODE_ID         = each.value
-    VAULT_NODES     = [for node in [tolist(var.vault_nodes)[0]] : "${node}.${dns_a_record_set.vault_cluster.name}.${var.domain}" if node != each.value] # Join first node
   })
   path        = "${local.vault_config_dir}/vault.hcl"
   mode        = "0640"

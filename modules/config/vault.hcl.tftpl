@@ -15,13 +15,4 @@ listener "tcp" {
 storage "raft" {
   path = "${STORAGE_PATH}"
   node_id = "${NODE_ID}"
-
-%{ for node in VAULT_NODES ~}
-  retry_join = {
-    leader_api_addr         = "https://${node}:8200"
-    leader_ca_cert_file     = "${TLS_PATH}/vault-ca.pem"
-    leader_client_cert_file = "${TLS_PATH}/vault-cert.pem"
-    leader_client_key_file  = "${TLS_PATH}/vault-key.pem"
-  }
-%{ endfor ~}
 }
