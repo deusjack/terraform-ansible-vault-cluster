@@ -21,7 +21,7 @@ module "vault" {
   hostname   = each.value
   name       = "vault"
   image      = "docker.io/hashicorp/vault:${var.vault_version}"
-  command    = "server -config=${module.config.directories.config}"
+  command    = "vault server -config=${module.config.directories.config}"
   user       = "${var.hashicorp_users.uids[each.value]}:${var.hashicorp_users.primary_gids[each.value]}"
   environment_variables = {
     VAULT_CACERT = "${module.config.directories.tls}/vault-ca.pem"
