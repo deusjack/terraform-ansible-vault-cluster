@@ -33,13 +33,13 @@ resource "local_file" "ca" {
 ###############
 
 resource "tls_private_key" "vault_server" {
-  for_each    = toset(var.vault_nodes)
+  for_each    = var.vault_nodes
   algorithm   = "ECDSA"
   ecdsa_curve = "P256"
 }
 
 resource "tls_cert_request" "vault_server" {
-  for_each        = toset(var.vault_nodes)
+  for_each        = var.vault_nodes
   private_key_pem = tls_private_key.vault_server[each.key].private_key_pem
   dns_names = [
     "vault.${var.domain}",
@@ -52,7 +52,7 @@ resource "tls_cert_request" "vault_server" {
 }
 
 resource "tls_locally_signed_cert" "vault_server" {
-  for_each = toset(var.vault_nodes)
+  for_each = var.vault_nodes
   allowed_uses = [
     "client_auth",
     "server_auth"
