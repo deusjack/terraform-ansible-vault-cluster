@@ -43,7 +43,7 @@ module "vault_config" {
   source     = "git@github.com:deusjack/module-file.git?ref=1.0.0"
   hostname   = each.value
   content = templatefile("${path.module}/vault.hcl.tftpl", {
-    CLUSTER_ADDRESS = "${dns_a_record_set.vault_cluster.name}.${var.domain}"
+    CLUSTER_ADDRESS = "${each.value}.${dns_a_record_set.vault_cluster.name}.${var.domain}"
     API_ADDRESS     = "${each.value}.${dns_a_record_set.vault_cluster.name}.${var.domain}"
     TLS_PATH        = local.vault_tls_dir
     STORAGE_PATH    = local.vault_data_dir
