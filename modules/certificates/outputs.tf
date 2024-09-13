@@ -19,6 +19,7 @@ output "root_ca" {
     key  = tls_private_key.ca.private_key_pem
     cert = tls_self_signed_cert.ca.cert_pem
   }
+  sensitive = true
 }
 
 output "ca_cert_pem" {

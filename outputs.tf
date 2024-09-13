@@ -17,5 +17,6 @@ output "cert_files_path" {
 }
 
 output "root_ca" {
-  value = module.certificates.root_ca
+  value     = module.certificates.root_ca
+  sensitive = true
 }
