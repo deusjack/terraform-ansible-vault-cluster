@@ -15,3 +15,7 @@ output "container_name" {
 output "cert_files_path" {
   value = module.certificates.files
 }
+
+output "root_ca" {
+  value = module.certificates.root_ca
+}
