@@ -1,4 +1,4 @@
-# vault-cluster
+# terraform-ansible-vault-cluster
 Terraform module to create a Vault cluster on bare metal with Ansible
 
 > [!Warning]
@@ -9,7 +9,7 @@ Terraform module to create a Vault cluster on bare metal with Ansible
 
 # Terraform Docs
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -33,7 +33,7 @@ No providers.
 |------|--------|---------|
 | <a name="module_certificates"></a> [certificates](#module\_certificates) | ./modules/certificates | n/a |
 | <a name="module_config"></a> [config](#module\_config) | ./modules/config | n/a |
-| <a name="module_vault"></a> [vault](#module\_vault) | git@github.com:deusjack/module-podman-container.git | 1.0.0 |
+| <a name="module_vault"></a> [vault](#module\_vault) | git@github.com:deusjack/terraform-ansible-podman-container.git | 1.0.0 |
 
 ## Resources
 
@@ -57,4 +57,4 @@ No resources.
 | <a name="output_directories"></a> [directories](#output\_directories) | n/a |
 | <a name="output_root_ca"></a> [root\_ca](#output\_root\_ca) | n/a |
 | <a name="output_triggers"></a> [triggers](#output\_triggers) | n/a |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

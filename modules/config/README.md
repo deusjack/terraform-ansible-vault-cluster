@@ -14,28 +14,23 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_ansible"></a> [ansible](#provider\_ansible) | 1.3.0 |
-| <a name="provider_dns"></a> [dns](#provider\_dns) | 3.4.1 |
-| <a name="provider_null"></a> [null](#provider\_null) | 3.2.2 |
+| <a name="provider_dns"></a> [dns](#provider\_dns) | 3.4.2 |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_vault_config"></a> [vault\_config](#module\_vault\_config) | git@github.com:deusjack/terraform-ansible-file.git | 1.0.0 |
+| <a name="module_vault_config_dir"></a> [vault\_config\_dir](#module\_vault\_config\_dir) | git@github.com:deusjack/terraform-ansible-directory.git | 1.0.0 |
+| <a name="module_vault_data_dir"></a> [vault\_data\_dir](#module\_vault\_data\_dir) | git@github.com:deusjack/terraform-ansible-directory.git | 1.0.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [ansible_playbook.vault_config](https://registry.terraform.io/providers/ansible/ansible/latest/docs/resources/playbook) | resource |
-| [ansible_playbook.vault_data](https://registry.terraform.io/providers/ansible/ansible/latest/docs/resources/playbook) | resource |
 | [dns_a_record_set.vault_cluster](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/a_record_set) | resource |
 | [dns_aaaa_record_set.vault_cluster](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/aaaa_record_set) | resource |
 | [dns_cname_record.vault_nodes](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/cname_record) | resource |
-| [null_resource.directory](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [null_resource.file_write](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [null_resource.hashicorp](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [null_resource.vault_config](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-| [null_resource.vault_data_dir](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [dns_a_record_set.vault_nodes](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/data-sources/a_record_set) | data source |
 | [dns_aaaa_record_set.vault_nodes](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/data-sources/aaaa_record_set) | data source |
 
@@ -54,7 +49,7 @@ No modules.
 | <a name="output_directories"></a> [directories](#output\_directories) | n/a |
 | <a name="output_triggers"></a> [triggers](#output\_triggers) | n/a |
 <!-- END_TF_DOCS -->
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -102,4 +97,4 @@ No modules.
 |------|-------------|
 | <a name="output_directories"></a> [directories](#output\_directories) | n/a |
 | <a name="output_triggers"></a> [triggers](#output\_triggers) | n/a |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

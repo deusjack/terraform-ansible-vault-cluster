@@ -17,7 +17,7 @@ module "certificates" {
 module "vault" {
   depends_on = [module.certificates]
   for_each   = var.vault_nodes
-  source     = "git@github.com:deusjack/module-podman-container.git?ref=1.0.0"
+  source     = "git@github.com:deusjack/terraform-ansible-podman-container.git?ref=1.0.0"
   hostname   = each.value
   name       = "vault"
   image      = "docker.io/hashicorp/vault:${var.vault_version}"

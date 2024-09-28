@@ -84,7 +84,7 @@ module "vault_tls_dir" {
 module "vault_ca_files" {
   depends_on  = [module.vault_tls_dir]
   for_each    = var.vault_nodes
-  source      = "git@github.com:deusjack/module-file.git?ref=1.0.0"
+  source      = "git@github.com:deusjack/terraform-ansible-file.git?ref=1.0.0"
   hostname    = each.value
   content     = tls_self_signed_cert.ca.cert_pem
   path        = "${module.vault_tls_dir[each.key].path}/vault-ca.pem"
@@ -99,7 +99,7 @@ module "vault_ca_files" {
 module "vault_cert_files" {
   depends_on  = [module.vault_tls_dir]
   for_each    = var.vault_nodes
-  source      = "git@github.com:deusjack/module-file.git?ref=1.0.0"
+  source      = "git@github.com:deusjack/terraform-ansible-file.git?ref=1.0.0"
   hostname    = each.value
   content     = join("\n", [tls_locally_signed_cert.vault_server[each.key].cert_pem, tls_self_signed_cert.ca.cert_pem])
   path        = "${module.vault_tls_dir[each.key].path}/vault-cert.pem"
@@ -114,7 +114,7 @@ module "vault_cert_files" {
 module "vault_key_files" {
   depends_on  = [module.vault_tls_dir]
   for_each    = var.vault_nodes
-  source      = "git@github.com:deusjack/module-file.git?ref=1.0.0"
+  source      = "git@github.com:deusjack/terraform-ansible-file.git?ref=1.0.0"
   hostname    = each.value
   content     = tls_private_key.vault_server[each.key].private_key_pem
   path        = "${module.vault_tls_dir[each.key].path}/vault-key.pem"
