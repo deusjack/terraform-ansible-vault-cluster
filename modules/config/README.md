@@ -7,14 +7,11 @@
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8.0 |
 | <a name="requirement_ansible"></a> [ansible](#requirement\_ansible) | >= 1.0, < 2 |
-| <a name="requirement_dns"></a> [dns](#requirement\_dns) | >= 3.0, < 4 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >= 3.0, < 4 |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_dns"></a> [dns](#provider\_dns) | 3.4.2 |
+No providers.
 
 ## Modules
 
@@ -26,13 +23,7 @@
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [dns_a_record_set.vault_cluster](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/a_record_set) | resource |
-| [dns_aaaa_record_set.vault_cluster](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/aaaa_record_set) | resource |
-| [dns_cname_record.vault_nodes](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/resources/cname_record) | resource |
-| [dns_a_record_set.vault_nodes](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/data-sources/a_record_set) | data source |
-| [dns_aaaa_record_set.vault_nodes](https://registry.terraform.io/providers/hashicorp/dns/latest/docs/data-sources/aaaa_record_set) | data source |
+No resources.
 
 ## Inputs
 

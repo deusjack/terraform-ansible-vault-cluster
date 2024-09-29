@@ -7,6 +7,17 @@ Terraform module to create a Vault cluster on bare metal with Ansible
 > * This module doesn't delete the changes on the target system on destroy.
 > * Set the image version to be exact or minor, because auto update is enabled.
 
+# Requirements
+
+* DNS entries:
+  * `<node>.vault.<domain>` for each node
+  * `vault.<domain>` returning all IPs of the cluster
+* Ansible:
+  * DNS entries for all nodes
+  * root access via ssh
+* OS: OpenSUSE MicroOS
+* Portainer
+
 # Terraform Docs
 
 <!-- BEGIN_TF_DOCS -->
@@ -16,7 +27,6 @@ Terraform module to create a Vault cluster on bare metal with Ansible
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8.0 |
 | <a name="requirement_ansible"></a> [ansible](#requirement\_ansible) | >= 1, < 2 |
-| <a name="requirement_dns"></a> [dns](#requirement\_dns) | >= 3, < 4 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 2, < 3 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >= 3, < 4 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3, < 4 |

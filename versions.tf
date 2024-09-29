@@ -5,10 +5,6 @@ terraform {
       source  = "ansible/ansible"
       version = ">= 1, < 2"
     }
-    dns = {
-      source  = "hashicorp/dns"
-      version = ">= 3, < 4"
-    }
     local = {
       source  = "hashicorp/local"
       version = ">= 2, < 3"
